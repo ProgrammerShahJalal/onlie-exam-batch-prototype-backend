@@ -28,9 +28,8 @@ const generateRegistrationNumber = async () => {
 const createTokenRefreshTokenForUser = async (user) => {
   // creating payload for token
   const payload = {
-    name: user?.name,
-    userId: user._id,
-    email: user.email,
+    registration_no: user.registration_no,
+    role: user.role,
   };
 
   // creating access token

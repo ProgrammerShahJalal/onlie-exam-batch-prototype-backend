@@ -7,6 +7,7 @@ const userSchema = new Schema(
     registration_no: { type: String, unique: true },
     contact_no: { type: String },
     password: String,
+    role: { type: String, enum: ["student", "teacher"] },
   },
   {
     timestamps: true,
