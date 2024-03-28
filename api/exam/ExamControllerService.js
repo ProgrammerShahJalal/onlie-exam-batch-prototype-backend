@@ -5,7 +5,6 @@ const router = Router();
 
 router.post("/", async (req, res) => {
   const payload = req.body;
-
   try {
     const response = await Exam.create(payload);
 
@@ -68,3 +67,5 @@ router.delete("/:exam_id", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+module.exports = router;
