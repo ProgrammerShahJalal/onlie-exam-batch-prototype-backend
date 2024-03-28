@@ -9,10 +9,16 @@ config();
 // create an express app
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  `${process.env.FRONTEND_SITE_URL}`,
+];
+
 // middlewares
 app.use(
   cors({
-    origin: `${process.env.FRONTEND_SITE_URL}`,
+    origin: allowedOrigins.includes("*") ? "*" : allowedOrigins,
+    credentials: true,
   })
 );
 app.use(express.json());
