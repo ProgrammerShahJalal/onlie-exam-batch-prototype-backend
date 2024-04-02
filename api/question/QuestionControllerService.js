@@ -9,12 +9,12 @@ router.post("/", async (req, res) => {
   try {
     const response = await Question.create(payload);
 
-    if (response) res.json(response);
-    else res.send({ error: "Error creating question!" });
+    if (response) return res.json(response);
+    else return res.send({ error: "Error creating question!" });
 
     return res.status(201).json({ data: response });
   } catch (error) {
-    res.status(500).json({ error: "Internal Server Error" });
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
@@ -27,3 +27,5 @@ router.delete("/:question_id", async (req, res) => {
 
   return res.status(201).json({ data: response });
 });
+
+module.exports = router;
