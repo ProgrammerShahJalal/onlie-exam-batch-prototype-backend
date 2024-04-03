@@ -16,19 +16,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// router.post("/submit", async (req, res) => {
-//   const payload = req.body;
-//   try {
-//     const exam
-//     const response = await Exam.create(payload);
-
-//     if (response) return res.json(response);
-//     else res.send({ error: "Error creating exam!" });
-//   } catch (error) {
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
-
 router.get("/", async (req, res) => {
   try {
     const exams = await Exam.find({});

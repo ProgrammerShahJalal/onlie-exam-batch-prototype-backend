@@ -5,6 +5,7 @@ const { config } = require("dotenv");
 const userRouter = require("./api/user/UserControllerService");
 const examRouter = require("./api/exam/ExamControllerService");
 const questionRouter = require("./api/question/QuestionControllerService");
+const examSubmissionRouter = require("./api/exam-submission/ExamSubmissionControllerService");
 
 // load environment variables from .env file
 config();
@@ -31,5 +32,6 @@ app.use(bodyParser.urlencoded({ limit: "1mb", extended: true }));
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/exams", examRouter);
 app.use("/api/v1/questions", questionRouter);
+app.use("/api/v1/exam-submissions", examSubmissionRouter);
 
 module.exports = app;
