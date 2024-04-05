@@ -28,9 +28,9 @@ router.get(
       registration_no,
     });
     if (isSubmitted) {
-      return res.json({ status: true });
+      return res.json({ version: isSubmitted?.version, status: true });
     } else {
-      return res.json({ status: false });
+      return res.json({ version: isSubmitted?.version, status: false });
     }
   }
 );
